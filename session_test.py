@@ -7,7 +7,17 @@ from pprint import pprint
 
 
 url = 'https://rational-club.kontrast-dev.com'
-username, password, scope = (os.environ.get(i) for i in ['stage_user', 'stage_password', 'stage_scope'])
+username, password, scope, client_id, client_secret = (os.environ.get(i) for i in
+['stage_user', 'stage_password', 'stage_scope', 'stage_client_id', 'stage_client_secret'])
+
+print('-------------------------')
+print('env variable test:')
+print('stage user: {}'.format(username))
+print('stage password: {}'.format(password))
+print('stage scope: {}'.format(scope))
+print('stage client id: {}'.format(client_id))
+print('stage client secret: {}'.format(client_secret))
+print('-------------------------')
 
 with requests.Session() as sess:
     payload = {'username': username,
@@ -29,7 +39,6 @@ with requests.Session() as sess:
     print('token retrieval success: {success}'.format(success=True if response.status_code==200 else False))
     print('-------------------------')
 
-client_id, client_secret = (os.environ.get(i) for i in ['stage_client_id', 'stage_client_secret'])
 token_url = 'https://www.connectedcooking.com/oauth/token'
 
 with requests.Session() as token_sess:

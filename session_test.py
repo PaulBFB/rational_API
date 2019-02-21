@@ -7,6 +7,8 @@ from pprint import pprint
 
 
 url = 'https://rational-club.kontrast-dev.com/member/loginCC'
+#url = 'https://www.club-rational.com/member/loginCC'
+token_url = 'https://www.connectedcooking.com/oauth/token'
 username, password, scope, client_id, client_secret = (os.environ.get(i) for i in
 ['stage_user', 'stage_password', 'stage_scope', 'stage_client_id', 'stage_client_secret'])
 
@@ -43,17 +45,12 @@ with requests.Session() as sess:
         pprint(response.json())
         quit()
     print('-------------------------')
-
-token_url = 'https://www.connectedcooking.com/oauth/token'
-
-with requests.Session() as token_sess:
-    token_sess.headers.update({'scope': scope})
     payload = {'jwe': token,
                'grant_type': 'jwe_token',
                'client_secret': client_secret,
                'client_id': client_id}
     r = requests.Request('POST', token_url, auth=HTTPBasicAuth(client_id, client_secret), data=payload)
-    prepped = token_sess.prepare_request(r)
+    prepped = sess.prepare_request(r)
     print('request to:')
     print(prepped.url)
     print('-------------------------')

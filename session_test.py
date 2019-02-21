@@ -59,7 +59,7 @@ with requests.Session() as sess:
     print('-------------------------')
     print('request body:')
     pprint(prepped.body)
-    response = token_sess.send(prepped)
+    response = sess.send(prepped)
     print('token authentication success: {success}'.format(success=True if response.status_code==200 else False))
     print('-------------------------')
     print(response.status_code)

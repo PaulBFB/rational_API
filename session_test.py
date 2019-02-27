@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import requests
 import os
 from requests.auth import HTTPBasicAuth
@@ -6,7 +7,7 @@ from pprint import pprint
 
 url = 'https://rational-club.kontrast-dev.com/member/loginCC'
 # url = 'https://www.club-rational.com/member/loginCC'
-token_url = 'https://www.connectedcooking.com/oauth/token'
+token_url = 'https://stage.connectedcooking.com/oauth/token'
 username, password, scope, client_id, client_secret = (os.environ.get(i) for i in
 ['stage_user', 'stage_password', 'stage_scope', 'stage_client_id', 'stage_client_secret'])
 

@@ -1,6 +1,6 @@
 import requests
 import os
-import datetime
+import datetime as dt
 from requests.auth import HTTPBasicAuth
 from pprint import pprint
 
@@ -54,6 +54,16 @@ if __name__ == '__main__':
     pprint(login_stage().get('response'))
     print('----------------------------')
     print('testing function - token')
-    pprint(get_bearer().get('response'))
-    print('token received is valid until: {expiration}'.format(expiration=datetime.datetime.now() +
-                                                                          datetime.timedelta(seconds=int(get_bearer().get('expires_in')))))
+    bearer = get_bearer()
+    pprint(bearer.get('response'))
+    print('token received is valid until: {expiration}'.format(expiration=dt.datetime.now() +
+                                                                          dt.timedelta(seconds=int(get_bearer().get('expires_in')))))
+    token, r_token, expiration = (bearer.get(i) for i in ['token', 'refresh_token', 'expires_in'])
+    valid_to = dt.datetime.now() + dt.timedelta(seconds=int(expiration))
+    write = {token: 'token.txt', r_token: 'refresh_token.txt', valid_to: 'valid_to.txt'}
+    print('----------------------------')
+    print('saving data to current directory as text: {}, {}, {}'.format(*write.values()))
+    for k, v in write.items():
+        fh = open(v, mode='w')
+        fh.write(str(k))
+    print('authentication successfully written to current directory')

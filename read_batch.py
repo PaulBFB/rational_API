@@ -3,14 +3,12 @@ import os
 from pprint import pprint
 
 
-fh = open('token.txt', mode='r')
-token = fh.read()
+with open('token.txt', mode='r') as fh:
+    token = fh.read()
 token = token.rstrip()
 scope = os.environ.get('stage_scope')
 
-#print(token)
-
-url = 'https://stage.connectedcooking.com/haccps'.rstrip()
+url = 'https://stage.connectedcooking.com/api/haccps'.rstrip()
 headers = {'Authorization': 'Bearer ' + token,
            'scope': scope}
 parameters = {'finished': 'true',

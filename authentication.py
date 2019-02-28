@@ -10,9 +10,9 @@ token_url = 'https://stage.connectedcooking.com/oauth/token'
 
 
 def login_stage(*,
-                username=os.environ.get('stage_user'),
-                password=os.environ.get('stage_password'),
-                scope=os.environ.get('stage_scope')):
+                username: str = os.environ.get('stage_user'),
+                password: str = os.environ.get('stage_password'),
+                scope: str = os.environ.get('stage_scope')) -> dict:
     payload = {'username': username,
                'password': password}
     with requests.Session() as sess:
@@ -28,9 +28,9 @@ def login_stage(*,
 
 
 def get_bearer(*,
-               jwe=login_stage().get('jwe'),
-               client_id=os.environ.get('stage_client_id'),
-               client_secret=os.environ.get('stage_client_secret')):
+               jwe: str = login_stage().get('jwe'),
+               client_id: str = os.environ.get('stage_client_id'),
+               client_secret: str = os.environ.get('stage_client_secret')) -> dict:
     payload = {'jwe': jwe,
                'client_id': client_id,
                'client_secret': client_secret,
@@ -64,6 +64,6 @@ if __name__ == '__main__':
     print('----------------------------')
     print('saving data to current directory as text: {}, {}, {}'.format(*write.values()))
     for k, v in write.items():
-        fh = open(v, mode='w')
-        fh.write(str(k))
+        with open(v, mode='w') as fh:
+            fh.write(str(k))
     print('authentication successfully written to current directory')

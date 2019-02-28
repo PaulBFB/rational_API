@@ -33,7 +33,7 @@ def get_bearer(*,
                jwe: str = login_stage().get('jwe'),
                client_id: str = os.environ.get('stage_client_id'),
                client_secret: str = os.environ.get('stage_client_secret'),
-               scope: dict = os.environ.get('stage_scope')) -> dict:
+               scope: str = os.environ.get('stage_scope')) -> dict:
     payload = {'jwe': jwe,
                'client_id': client_id,
                'client_secret': client_secret,

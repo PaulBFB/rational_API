@@ -1,14 +1,15 @@
 import requests
-import os
+import json
 from pprint import pprint
 
 
-with open('token.txt', mode='r') as fh:
-    token = fh.read()
-token = token.rstrip()
-scope = os.environ.get('stage_scope')
+with open('token.json', mode='r') as fh:
+    auth_file = json.load(fh)
 
-url = 'https://stage.connectedcooking.com/api/haccps'.rstrip()
+token = auth_file['token']
+scope = auth_file['details']['request_headers']['scope']
+
+url = 'https://stage.connectedcooking.com/api/haccps'
 headers = {'Authorization': 'Bearer ' + token,
            'scope': scope}
 parameters = {'finished': 'true',

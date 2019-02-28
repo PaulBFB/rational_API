@@ -1,3 +1,4 @@
+import json
 import requests
 import os
 import datetime as dt
@@ -23,7 +24,8 @@ def login_stage(*,
         token = response.json().get('data')
     return {'response': response.status_code,
             'jwe': token,
-            'details': {'request_headers': prepped.headers,
+            'details': {'request_headers': dict(prepped.headers),
+                        # header object needs to be converted to dict to be JSON serializable
                         'request_body': prepped.body}}
 
 
@@ -43,7 +45,8 @@ def get_bearer(*,
             'token': response.json().get('access_token'),
             'expires_in': response.json().get('expires_in'),
             'refresh_token': response.json().get('refresh_token'),
-            'details': {'request_headers': prepped.headers,
+            'details': {'request_headers': dict(prepped.headers),
+                        # header object needs to be converted to dict to be JSON serializable
                         'request_body': prepped.body,
                         'token_type': response.json().get('token_type'),
                         'scope': response.json().get('scope')}}
@@ -55,15 +58,13 @@ if __name__ == '__main__':
     print('----------------------------')
     print('testing function - token')
     bearer = get_bearer()
+    # datetime needs to be converted to string to dump into JSON (datetime is not JSON serializable)
+    bearer['valid_to'] = str(dt.datetime.now() + dt.timedelta(seconds=bearer.get('expires_in')))
     pprint(bearer.get('response'))
     print('token received is valid until: {expiration}'.format(expiration=dt.datetime.now() +
                                                                           dt.timedelta(seconds=int(get_bearer().get('expires_in')))))
-    token, r_token, expiration = (bearer.get(i) for i in ['token', 'refresh_token', 'expires_in'])
-    valid_to = dt.datetime.now() + dt.timedelta(seconds=int(expiration))
-    write = {token: 'token.txt', r_token: 'refresh_token.txt', valid_to: 'valid_to.txt'}
     print('----------------------------')
-    print('saving data to current directory as text: {}, {}, {}'.format(*write.values()))
-    for k, v in write.items():
-        with open(v, mode='w') as fh:
-            fh.write(str(k))
+    print('saving data to current directory as json')
+    with open('token.json', mode='w') as fh:
+        json.dump(bearer, fh)
     print('authentication successfully written to current directory')

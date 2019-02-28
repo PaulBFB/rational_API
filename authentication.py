@@ -32,12 +32,14 @@ def login_stage(*,
 def get_bearer(*,
                jwe: str = login_stage().get('jwe'),
                client_id: str = os.environ.get('stage_client_id'),
-               client_secret: str = os.environ.get('stage_client_secret')) -> dict:
+               client_secret: str = os.environ.get('stage_client_secret'),
+               scope: dict = os.environ.get('stage_scope')) -> dict:
     payload = {'jwe': jwe,
                'client_id': client_id,
                'client_secret': client_secret,
                'grant_type': 'jwe_token'}
     with requests.Session() as sess:
+        sess.headers.update({'scope': scope})
         r = requests.Request('POST', url=token_url, auth=HTTPBasicAuth(username=client_id, password=client_secret), data=payload)
         prepped = sess.prepare_request(r)
         response = sess.send(prepped)

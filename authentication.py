@@ -18,7 +18,9 @@ def login_stage(*,
                'password': password}
     with requests.Session() as sess:
         sess.headers.update({'scope': scope})
-        r = requests.Request('POST', url=logon_url, data=payload)
+        r = requests.Request('POST',
+                             url=logon_url,
+                             data=payload)
         prepped = sess.prepare_request(r)
         response = sess.send(prepped)
         token = response.json().get('data')
@@ -29,6 +31,9 @@ def login_stage(*,
                         'request_body': prepped.body}}
 
 
+# needs URL added to output - check which env the token is for!
+# needs boolean parameter - stage/live
+# needs check - token present & up to daten --> don't refresh!
 def get_bearer(*,
                jwe: str = login_stage().get('jwe'),
                client_id: str = os.environ.get('stage_client_id'),
@@ -40,7 +45,10 @@ def get_bearer(*,
                'grant_type': 'jwe_token'}
     with requests.Session() as sess:
         sess.headers.update({'scope': scope})
-        r = requests.Request('POST', url=token_url, auth=HTTPBasicAuth(username=client_id, password=client_secret), data=payload)
+        r = requests.Request('POST',
+                             url=token_url,
+                             auth=HTTPBasicAuth(username=client_id, password=client_secret),
+                             data=payload)
         prepped = sess.prepare_request(r)
         response = sess.send(prepped)
     return {'response': response.status_code,
@@ -63,8 +71,8 @@ if __name__ == '__main__':
     # datetime needs to be converted to string to dump into JSON (datetime is not JSON serializable)
     bearer['valid_to'] = str(dt.datetime.now() + dt.timedelta(seconds=bearer.get('expires_in')))
     pprint(bearer.get('response'))
-    print('token received is valid until: {expiration}'.format(expiration=dt.datetime.now() +
-                                                                          dt.timedelta(seconds=int(get_bearer().get('expires_in')))))
+    print('token received is valid until: {expiration}'.
+          format(expiration=dt.datetime.now() + dt.timedelta(seconds=int(get_bearer().get('expires_in')))))
     print('----------------------------')
     print('saving data to current directory as json')
     with open('token.json', mode='w') as fh:

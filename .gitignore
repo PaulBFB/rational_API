@@ -118,3 +118,4 @@ dmypy.json
 # custom patterns (project level)
 *.txt
 *.json
+*.csv

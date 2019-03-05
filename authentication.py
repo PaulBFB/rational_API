@@ -7,7 +7,7 @@ from pprint import pprint
 
 
 logon_url_stage = 'https://rational-club.kontrast-dev.com/member/loginCC'
-logon_url_live = 'https://wwww.club-rational.com/member/loginCC'
+logon_url_live = 'https://www.club-rational.com/member/loginCC'
 token_url_stage = 'https://stage.connectedcooking.com/oauth/token'
 token_url_live = 'https://www.connectedcooking.com/oauth/token'
 
@@ -16,13 +16,13 @@ def cc_login(*,
              username: str = os.environ.get('stage_user'),
              password: str = os.environ.get('stage_password'),
              scope: str = os.environ.get('stage_scope'),
-                 url: str = 'https://rational-club.kontrast-dev.com/member/loginCC') -> dict:
+             url: str = 'https://rational-club.kontrast-dev.com/member/loginCC') -> dict:
     payload = {'username': username,
                'password': password}
     with requests.Session() as sess:
         sess.headers.update({'scope': scope})
         r = requests.Request('POST',
-                             url=logon_url_stage,
+                             url=url,
                              data=payload)
         prepped = sess.prepare_request(r)
         response = sess.send(prepped)
@@ -82,8 +82,8 @@ if __name__ == '__main__':
     else:
         print('testing function - login(live):')
         url = logon_url_live
-        user = os.environ.get('live_user')
-        password = os.environ.get('live_password')
+        user = os.environ['live_user']
+        password = os.environ['live_password']
     login_test = cc_login(url=url,
                           username=user,
                           password=password)

@@ -69,8 +69,9 @@ def get_bearer(*,
 
 
 if __name__ == '__main__':
-    t_o_l = input('test live or stage? - l/s: ')
-    login_test, url, user, password = (None, None, None, None)
+    t_o_l = 'l'
+    # input('test live or stage? - l/s: ')
+    login_test, url, user, password = None, None, None, None
     if t_o_l not in ['s', 'l']:
         print('invalid choice')
         quit()
@@ -112,6 +113,6 @@ if __name__ == '__main__':
           format(expiration=dt.datetime.now() + dt.timedelta(seconds=int(get_bearer().get('expires_in')))))
     print('----------------------------')
     print('saving data to current directory as json')
-    with open('token.json', mode='w') as fh:
+    with open('live_bearer_token.json', mode='w') as fh:
         json.dump(bearer, fh)
     print('authentication successfully written to current directory')

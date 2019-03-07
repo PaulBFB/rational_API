@@ -3,13 +3,14 @@ import json
 import datetime as dt
 import pandas as pd
 from pprint import pprint
-from authentication import get_bearer
+from authentication import get_bearer, token_url_live, token_url_stage
 
 
 def get_batches(*,
+                token_file: str = 'live_jwe_token.json',
                 stage: bool = True) -> dict:
     url = 'https://stage.connectedcooking.com/api/haccps' if stage else 'https://www.connectedcooking.com/api/haccps'
-    with open('token.json') as fh:
+    with open(token_file) as fh:
         auth_file = json.load(fh)
     expiration = dt.datetime.strptime(auth_file.get('valid_to'), '%Y-%m-%d %H:%M:%S.%f')
     if expiration < dt.datetime.now():
@@ -17,7 +18,13 @@ def get_batches(*,
         if choice == 'N':
             quit()
         else:
-            get_bearer()
+            if not stage:
+                kwargs = {'url': token_url_live,
+                          'jwe': auth_file['token']}
+            else:
+                kwargs = {'url': token_url_stage,
+                          'jwe': auth_file['token']}
+            get_bearer(**kwargs)
     # needs elif --> token for correct env?
     else:
         pass

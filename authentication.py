@@ -35,9 +35,7 @@ def cc_login(*,
                         'request_url': url}}
 
 
-# needs URL added to output - check which env the token is for!
-# needs boolean parameter - stage/live
-# needs check - token present & up to daten --> don't refresh!
+# needs check - token present & up to date --> don't refresh!
 def get_bearer(*,
                jwe: str = cc_login().get('jwe'),
                client_id: str = os.environ.get('stage_client_id'),

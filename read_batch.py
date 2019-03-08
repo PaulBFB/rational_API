@@ -7,7 +7,7 @@ from authentication import get_bearer, token_url_live, token_url_stage
 
 
 def get_batches(*,
-                token_file: str = 'live_jwe_token.json',
+                token_file: str = 'live_bearer_token.json',
                 stage: bool = True) -> dict:
     url = 'https://stage.connectedcooking.com/api/haccps' if stage else 'https://www.connectedcooking.com/api/haccps'
     with open(token_file) as fh:
@@ -24,12 +24,10 @@ def get_batches(*,
             else:
                 kwargs = {'url': token_url_stage,
                           'jwe': auth_file['token']}
-            get_bearer(**kwargs)
+            auth_file = get_bearer(**kwargs)
     # needs elif --> token for correct env?
     else:
         pass
-    with open('token.json') as fh:
-        auth_file = json.load(fh)
     token = auth_file['token']
     scope = auth_file['details']['request_headers']['scope']
     headers = {'Authorization': 'Bearer ' + token,
@@ -51,7 +49,7 @@ def get_batches(*,
 
 
 if __name__ == '__main__':
-    batches = get_batches(stage=True)
+    batches = get_batches(stage=False)
     pprint(batches.get('request_headers'))
     pprint(batches.get('request_body'))
     print(batches.get('response'))

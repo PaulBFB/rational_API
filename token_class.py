@@ -1,4 +1,6 @@
 import json
+import os
+import requests
 from datetime import datetime, timedelta
 from pprint import pprint
 from time import sleep
@@ -6,7 +8,7 @@ from time import sleep
 
 class Token:
     def __init__(self,
-                 scope='HOFER_pleitner',
+                 scope=os.environ.get('stage_scope'),
                  created=datetime.now(),
                  expires_in=86400,
                  valid=None):
@@ -48,6 +50,30 @@ class JWEToken(Token):
         except FileNotFoundError:
             self.valid = False
             return False
+
+    def request(self, *,
+                username: str = os.environ.get('stage_user'),
+                password: str = os.environ.get('stage_password'),
+                scope=None,
+                url: str = 'https://www.club-rational.com/member/loginCC'):
+        if scope is None:
+            scope = self.scope
+        payload = {'username': username,
+                   'password': password}
+        with requests.Session() as sess:
+            sess.headers.update({'scope': scope})
+            r = requests.Request('POST',
+                                 url=url,
+                                 data=payload)
+            prepped = sess.prepare_request(r)
+            response = sess.send(prepped)
+            r_json = response.json()
+        self.token = r_json.get('data')
+        self.details = {'request_headers': prepped.headers,
+                        'request_body': prepped.body,
+                        'request_url': prepped.url,
+                        'response': response.status_code}
+
 
 # to do: inherited JWE/bearer class
 # add refresh function to both

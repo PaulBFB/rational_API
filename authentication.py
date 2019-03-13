@@ -27,12 +27,12 @@ def cc_login(*,
         prepped = sess.prepare_request(r)
         response = sess.send(prepped)
         token = response.json().get('data')
-    return {'response': response.status_code,
-            'jwe': token,
+    return {'jwe': token,
             'details': {'request_headers': dict(prepped.headers),
                         # header object needs to be converted to dict to be JSON serializable
                         'request_body': prepped.body,
-                        'request_url': url}}
+                        'request_url': url,
+                        'response': response.status_code}}
 
 
 # needs check - token present & up to date --> don't refresh!
@@ -54,8 +54,7 @@ def get_bearer(*,
                              data=payload)
         prepped = sess.prepare_request(r)
         response = sess.send(prepped)
-    return {'response': response.status_code,
-            'token': response.json().get('access_token'),
+    return {'token': response.json().get('access_token'),
             'expires_in': response.json().get('expires_in'),
             'refresh_token': response.json().get('refresh_token'),
             'details': {'request_headers': dict(prepped.headers),
@@ -63,7 +62,8 @@ def get_bearer(*,
                         'request_body': prepped.body,
                         'request_url': url,
                         'token_type': response.json().get('token_type'),
-                        'scope': response.json().get('scope')}}
+                        'scope': response.json().get('scope'),
+                        'response': response.status_code}}
 
 
 if __name__ == '__main__':

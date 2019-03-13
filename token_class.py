@@ -29,6 +29,11 @@ class Token:
             self.valid = False
         return self.valid
 
+    @classmethod
+    def jwe(cls):
+        return cls(expires_in=999999,
+                   valid=True)
+
 
 class JWEToken(Token):
     def import_local(self,
@@ -124,6 +129,7 @@ class BearerToken(Token):
 # to do: shift check function downstream to BearerToken
 # to do: test JWE/Bearer local import/export
 # add refresh function to both
+# to do: change jwe token to classmethod
 
 
 if __name__ == '__main__':

@@ -26,7 +26,7 @@ class JWEToken(Token):
     def import_local(self,
                      path=None):
         if path is None:
-            path = self.site + path
+            path = self.site + '_jwe_token.json'
         return path
 
 # to do: inherited JWE/bearer class

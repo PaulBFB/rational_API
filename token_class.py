@@ -3,7 +3,6 @@ import os
 import requests
 from datetime import datetime, timedelta
 from pprint import pprint
-from time import sleep
 
 
 class Token:
@@ -11,14 +10,20 @@ class Token:
                  scope=os.environ.get('stage_scope'),
                  created=datetime.now(),
                  expires_in=86400,
-                 valid=None):
+                 valid=None,
+                 details=None,
+                 site='live',
+                 token=None):
         self.scope = scope
         self.created = created
         self.expires_in = expires_in
         self.valid = valid
+        self.details = details
+        self.site = site
+        self.token = token
 
     def check(self):
-        if self.created + timedelta(seconds=self.expires_in) > datetime.now():
+        if self.created + timedelta(seconds=self.expires_in) < datetime.now():
             self.valid = True
         else:
             self.valid = False
@@ -26,15 +31,6 @@ class Token:
 
 
 class JWEToken(Token):
-    def __init__(self,
-                 site='live',
-                 token=None,
-                 details=None):
-        self.site = site
-        self.token = token
-        self.details = details
-        super().__init__()
-
     def import_local(self,
                      path=None):
         if path is None:
@@ -87,15 +83,11 @@ class JWEToken(Token):
 
 class BearerToken(Token):
     def __init__(self,
-                 site='live',
-                 token=None,
-                 details=None,
-                 refresh_token=None):
-        self.site = site
-        self.token = token
-        self.details = details
-        self.refresh_token = refresh_token
+                 refresh_token=None,
+                 valid_to=None):
         super().__init__()
+        self.refresh_token = refresh_token
+        self.valid_to = valid_to
 
     def import_local(self,
                      path=None):
@@ -107,17 +99,32 @@ class BearerToken(Token):
                 self.token = local['token']
                 self.details = local['details']
                 self.refresh_token = local['refresh_token']
+                self.valid_to = datetime.strptime(local['valid_to'], '%Y-%m-%d %H:%M:%S.%f')
+            return True
+        except FileNotFoundError:
+            self.valid = False
+            return False
+
+    def export_local(self,
+                     path=None):
+        if path is None:
+            path = self.site + '_bearer_joken.json'
+        data = {'token': self.token,
+                'details': self.details,
+                'valid_to': str(self.valid_to),
+                'refresh_token': self.refresh_token}
+        try:
+            with open(path, mode='w') as fh:
+                json.dump(data, fh)
             return True
         except FileNotFoundError:
             return False
 
-# to do: inherited JWE/bearer class
-# to do: shift details, token, site up to main class
+
 # to do: shift import_local, export_local to Token class --> use decorators in subclasses for added params
 # to do: shift check function downstream to BearerToken
 # to do: test JWE/Bearer local import/export
 # add refresh function to both
-# add local-load to both
 
 
 if __name__ == '__main__':
@@ -131,16 +138,3 @@ if __name__ == '__main__':
     pprint(jwe_test.import_local())
 
 
-#    test = Token('HOFER_pleitner', datetime.now(), 20, True)
-
-#    for i in range(20):
-#        test.check()
-#        sleep(3.0)
-#        print(i)
-#        print('token scope: {scope}, created at:{created}, expires in {expires_in} seconds'.format(scope=test.scope,
-#                                                                                                   created=test.created,
-#                                                                                                   expires_in=test.expires_in))
-#        if test.valid is True:
-#            print('token is valid')
-#        else:
-#            print('token has expired!')

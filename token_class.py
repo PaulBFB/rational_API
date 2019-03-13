@@ -48,8 +48,8 @@ class JWEToken(Token):
             return False
 
     def request(self, *,
-                username: str = os.environ.get('stage_user'),
-                password: str = os.environ.get('stage_password'),
+                username: str = os.environ.get('live_user'),
+                password: str = os.environ.get('live_password'),
                 scope=None,
                 url: str = 'https://www.club-rational.com/member/loginCC'):
         if scope is None:
@@ -65,7 +65,7 @@ class JWEToken(Token):
             response = sess.send(prepped)
             r_json = response.json()
         self.token = r_json.get('data')
-        self.details = {'request_headers': prepped.headers,
+        self.details = {'request_headers': dict(prepped.headers),
                         'request_body': prepped.body,
                         'request_url': prepped.url,
                         'response': response.status_code}
@@ -121,7 +121,6 @@ class BearerToken(Token):
             return False
 
 
-# to do: shift import_local, export_local to Token class --> use decorators in subclasses for added params
 # to do: shift check function downstream to BearerToken
 # to do: test JWE/Bearer local import/export
 # add refresh function to both

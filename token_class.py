@@ -73,9 +73,49 @@ class JWEToken(Token):
                         'request_body': prepped.body,
                         'request_url': prepped.url,
                         'response': response.status_code}
+        result = True if self.details['response'] == 200 else False
+        return result
 
+    def export_local(self, path=None):
+        if path is None:
+            path = self.scope + '_jwe_token.json'
+        data = {'jwe': self.token,
+                'details': self.details}
+        with open(path, mode='w') as fh:
+            json.dump(data, fh)
+
+
+class BearerToken(Token):
+    def __init__(self,
+                 site='live',
+                 token=None,
+                 details=None,
+                 refresh_token=None):
+        self.site = site
+        self.token = token
+        self.details = details
+        self.refresh_token = refresh_token
+        super().__init__()
+
+    def import_local(self,
+                     path=None):
+        if path is None:
+            path = self.site + '_bearer_token.json'
+        try:
+            with open(path) as fh:
+                local = json.load(fh)
+                self.token = local['token']
+                self.details = local['details']
+                self.refresh_token = local['refresh_token']
+            return True
+        except FileNotFoundError:
+            return False
 
 # to do: inherited JWE/bearer class
+# to do: shift details, token, site up to main class
+# to do: shift import_local, export_local to Token class --> use decorators in subclasses for added params
+# to do: shift check function downstream to BearerToken
+# to do: test JWE/Bearer local import/export
 # add refresh function to both
 # add local-load to both
 

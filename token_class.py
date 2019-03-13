@@ -1,9 +1,15 @@
+import json
 from datetime import datetime, timedelta
+from pprint import pprint
 from time import sleep
 
 
 class Token:
-    def __init__(self, scope='HOFER_pleitner', created=datetime.now(), expires_in=86400, valid=True):
+    def __init__(self,
+                 scope='HOFER_pleitner',
+                 created=datetime.now(),
+                 expires_in=86400,
+                 valid=None):
         self.scope = scope
         self.created = created
         self.expires_in = expires_in
@@ -18,16 +24,30 @@ class Token:
 
 
 class JWEToken(Token):
-    def __init__(self, site='live', token=None):
+    def __init__(self,
+                 site='live',
+                 token=None,
+                 details=None):
         self.site = site
         self.token = token
+        self.details = details
         super().__init__()
 
     def import_local(self,
                      path=None):
         if path is None:
             path = self.site + '_jwe_token.json'
-        return path
+        try:
+            with open(path) as fh:
+                local = json.load(fh)
+            self.token = local['jwe']
+            self.details = local['details']
+            self.created = datetime.now()
+            self.valid = True
+            return True
+        except FileNotFoundError:
+            self.valid = False
+            return False
 
 # to do: inherited JWE/bearer class
 # add refresh function to both
@@ -41,7 +61,8 @@ if __name__ == '__main__':
     print(jwe_test.scope)
     print(jwe_test.site)
     print(jwe_test.check())
-    print(jwe_test.import_local())
+#    print(jwe_test.import_local())
+    pprint(jwe_test.import_local())
 
 
 #    test = Token('HOFER_pleitner', datetime.now(), 20, True)

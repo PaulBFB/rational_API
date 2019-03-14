@@ -155,11 +155,6 @@ class BearerToken(Token):
         return True if self.details['response'] == 200 else False
 
 
-# to do: shift check function downstream to BearerToken
-# to do: test JWE/Bearer local import/export
-# add refresh function to both
-
-
 if __name__ == '__main__':
     jwe_test = JWEToken()
     print(jwe_test.valid)
@@ -169,5 +164,3 @@ if __name__ == '__main__':
     print(jwe_test.check())
 #    print(jwe_test.import_local())
     pprint(jwe_test.import_local())
-
-

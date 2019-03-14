@@ -1,6 +1,7 @@
 import json
 import os
 import requests
+from requests.auth import HTTPBasicAuth
 from datetime import datetime, timedelta
 from pprint import pprint
 
@@ -125,11 +126,38 @@ class BearerToken(Token):
         except FileNotFoundError:
             return False
 
+    def request(self,
+                jwe: str,
+                client_id: str = os.environ.get('live_client_id'),
+                client_secret: str = os.environ.get('live_client_secret'),
+                scope: str = os.environ.get('stage_scope'),
+                url: str = 'https://www.connectedcooking.com/oauth/token'):
+        payload = {'jwe': jwe,
+                   'grant_type': 'jwe_token'}
+        with requests.Session() as sess:
+            sess.headers.update({'scope': scope})
+            r = requests.Request(method='POST',
+                                 url=url,
+                                 data=payload,
+                                 auth=HTTPBasicAuth(client_id, client_secret))
+            prepped = sess.prepare_request(r)
+            response = sess.send(prepped)
+            r_json = response.json()
+        self.token = r_json.get('access_token')
+        self.refresh_token = r_json.get('refresh_token')
+        self.valid_to = datetime.now() + timedelta(seconds=int(r_json.get('expires_in')))
+        self.valid = False if r_json.get('access_token') is None else True
+        self.site = url
+        self.details = {'request_headers': dict(prepped.headers),
+                        'request_url': prepped.url,
+                        'request_body': prepped.body,
+                        'response': response.status_code}
+        return True if self.details['response'] == 200 else False
+
 
 # to do: shift check function downstream to BearerToken
 # to do: test JWE/Bearer local import/export
 # add refresh function to both
-# to do: change jwe token to classmethod
 
 
 if __name__ == '__main__':

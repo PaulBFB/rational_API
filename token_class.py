@@ -6,6 +6,9 @@ from datetime import datetime, timedelta
 from pprint import pprint
 
 
+time_format = '%Y-%m-%d %H:%M:%S.%f'
+
+
 class Token:
     def __init__(self,
                  scope=os.environ.get('stage_scope'),
@@ -24,7 +27,7 @@ class Token:
         self.token = token
 
     def check(self):
-        if self.created + timedelta(seconds=self.expires_in) < datetime.now():
+        if self.created + timedelta(seconds=self.expires_in) > datetime.now():
             self.valid = True
         else:
             self.valid = False
@@ -46,7 +49,7 @@ class JWEToken(Token):
                 local = json.load(fh)
             self.token = local['jwe']
             self.details = local['details']
-            self.created = datetime.now()
+            self.created = datetime.strptime(local['created'], time_format)
             self.valid = True
             return True
         except FileNotFoundError:
@@ -82,6 +85,7 @@ class JWEToken(Token):
         if path is None:
             path = self.scope + '_jwe_token.json'
         data = {'jwe': self.token,
+                'created': str(self.created),
                 'details': self.details}
         with open(path, mode='w') as fh:
             json.dump(data, fh)
@@ -102,10 +106,11 @@ class BearerToken(Token):
         try:
             with open(path) as fh:
                 local = json.load(fh)
+                self.created = datetime.strptime(local['created'], time_format)
                 self.token = local['token']
                 self.details = local['details']
                 self.refresh_token = local['refresh_token']
-                self.valid_to = datetime.strptime(local['valid_to'], '%Y-%m-%d %H:%M:%S.%f')
+                self.valid_to = datetime.strptime(local['valid_to'], time_format)
             return True
         except FileNotFoundError:
             self.valid = False
@@ -117,6 +122,7 @@ class BearerToken(Token):
             path = self.site + '_bearer_joken.json'
         data = {'token': self.token,
                 'details': self.details,
+                'created': str(self.created),
                 'valid_to': str(self.valid_to),
                 'refresh_token': self.refresh_token}
         try:
@@ -153,6 +159,9 @@ class BearerToken(Token):
                         'request_body': prepped.body,
                         'response': response.status_code}
         return True if self.details['response'] == 200 else False
+
+    def check(self):
+        return True if self.valid_to > datetime.now() else False
 
 
 if __name__ == '__main__':

@@ -87,8 +87,12 @@ class JWEToken(Token):
         data = {'jwe': self.token,
                 'created': str(self.created),
                 'details': self.details}
-        with open(path, mode='w') as fh:
-            json.dump(data, fh)
+        try:
+            with open(path, mode='w') as fh:
+                json.dump(data, fh)
+            return True
+        except FileExistsError:
+            return False
 
 
 class BearerToken(Token):
@@ -129,7 +133,7 @@ class BearerToken(Token):
             with open(path, mode='w') as fh:
                 json.dump(data, fh)
             return True
-        except FileNotFoundError:
+        except FileExistsError:
             return False
 
     def request(self,

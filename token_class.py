@@ -6,48 +6,66 @@ from datetime import datetime, timedelta
 from pprint import pprint
 
 
-time_format = '%Y-%m-%d %H:%M:%S.%f'
+time_format = '%Y-%m-%d %H:%M:%S.%f'            # used for json Imports
 
 
 class Token:
+    """Parent class of all token Types used in the rational ConnectedCooking API
+
+    Attributes:
+        :param scope (str): token scope - sent to REST API in headers (default: retrieved from os.environ[stage_scope])
+        :param created (datetime.datetime): automatically set - when the token was initialized (default: now())
+        :param valid (bool): if token is valid (default: None)
+        :param site (str): indicating if production/staging is called (default: 'live')
+        :param token (str): token as string (default: None)
+    """
+
     def __init__(self,
                  scope=os.environ.get('stage_scope'),
                  created=datetime.now(),
-                 expires_in=86400,
                  valid=None,
                  details=None,
                  site='live',
                  token=None):
         self.scope = scope
         self.created = created
-        self.expires_in = expires_in
         self.valid = valid
         self.details = details
         self.site = site
         self.token = token
 
-    def check(self):
-        if self.created + timedelta(seconds=self.expires_in) > datetime.now():
-            self.valid = True
-        else:
-            self.valid = False
-        return self.valid
+    def export_local(self, path=None):
+        """exports the current parameters of the token Object to a local JSON file
 
-    @classmethod
-    def jwe(cls):
-        return cls(expires_in=999999,
-                   valid=True)
+        Parameters:
+            :param path: the file path to be saved (default: 'token.json')
+            :type path: str
+        :returns True/False
+        """
 
-
-class JWEToken(Token):
-    def import_local(self,
-                     path=None):
         if path is None:
-            path = self.site + '_jwe_token.json'
+            path = 'token.json'         # default variable does not work in class method, workaround
+        data = {'token': self.token,
+                'created': str(self.created),
+                'details': self.details}
+        with open(path, mode='w') as fh:
+            json.dump(data, fh)
+        return True
+
+    def import_local(self, path=None):
+        """imports token from a local JSON file and sets all object parameters if unsuccessful, sets token.valid=False
+
+        Parameters:
+            :param path: the file path to be imported from (default: 'token.json')
+        :returns: True/False
+        """
+
+        if path is None:
+            path = 'token.json'
         try:
             with open(path) as fh:
                 local = json.load(fh)
-            self.token = local['jwe']
+            self.token = local['token']
             self.details = local['details']
             self.created = datetime.strptime(local['created'], time_format)
             self.valid = True
@@ -56,11 +74,25 @@ class JWEToken(Token):
             self.valid = False
             return False
 
+
+class JWEToken(Token):
+    """subclass - used for authorisation
+    """
+
     def request(self, *,
                 username: str = os.environ.get('live_user'),
                 password: str = os.environ.get('live_password'),
                 scope=None,
                 url: str = 'https://www.club-rational.com/member/loginCC'):
+        """retrieves a JWE token from the API based on user/password
+
+        Parameters:
+            :param username: user in auth (default: retrieved from os.environ['live_user'])
+            :param password: password in auth (default: retrieved from os.environ['live_password'])
+            :param scope: scope parameter to be sent with request (default: self.scope/'HOFER_pleitner')
+            :param url: request url (default: 'https://www.club-rational.com/member/loginCC')
+         :returns True/False   """
+
         if scope is None:
             scope = self.scope
         payload = {'username': username,
@@ -81,47 +113,54 @@ class JWEToken(Token):
         result = True if self.details['response'] == 200 else False
         return result
 
-    def export_local(self, path=None):
-        if path is None:
-            path = self.scope + '_jwe_token.json'
-        data = {'jwe': self.token,
-                'created': str(self.created),
-                'details': self.details}
-        try:
-            with open(path, mode='w') as fh:
-                json.dump(data, fh)
-            return True
-        except FileExistsError:
-            return False
-
 
 class BearerToken(Token):
+    """subclass used for Bearer Token - additional parameters
+
+    Parameters:
+        :param refresh_token (str): refresh token from latest request (default: None)
+        :param valid_to (datetime.datetime): expiration datetime - set at request with sec offset (default: None)
+
+
+    """
     def __init__(self,
                  refresh_token=None,
                  valid_to=None):
-        super().__init__()
+        super().__init__()          # inherits all parameters from parent class + additional parameters
         self.refresh_token = refresh_token
         self.valid_to = valid_to
 
     def import_local(self,
                      path=None):
+        """imports token from a local JSON file and sets all object parameters if unsuccessful, sets token.valid=False
+
+        Parameters:
+            :param path: the file path to be imported from (default: 'token.json')
+        :returns: True/False
+        """
+
         if path is None:
             path = self.site + '_bearer_token.json'
-        try:
+        if super().import_local(path=path):         # inherits all parameters from super().import_local()
             with open(path) as fh:
                 local = json.load(fh)
-                self.created = datetime.strptime(local['created'], time_format)
-                self.token = local['token']
-                self.details = local['details']
-                self.refresh_token = local['refresh_token']
-                self.valid_to = datetime.strptime(local['valid_to'], time_format)
+            self.refresh_token = local['refresh_token']
+            self.valid_to = datetime.strptime(local['valid_to'], time_format)
             return True
-        except FileNotFoundError:
+        else:           # if super().import_local with path fails, set valid to False
             self.valid = False
             return False
 
     def export_local(self,
                      path=None):
+        """exports the current parameters of the token Object to a local JSON file
+
+        Parameters:
+            :param path: the file path to be saved (default: 'token.json')
+            :type path: str
+        :returns True/False
+        """
+
         if path is None:
             path = self.site + '_bearer_joken.json'
         data = {'token': self.token,
@@ -142,6 +181,18 @@ class BearerToken(Token):
                 client_secret: str = os.environ.get('live_client_secret'),
                 scope: str = os.environ.get('stage_scope'),
                 url: str = 'https://www.connectedcooking.com/oauth/token'):
+        """
+        creates a bearer token based on jwe token, client secret/id
+
+        Parameters:
+            :param jwe: valid jwe token, get from JWEToken.token
+            :param client_id: client id for API (default: retrieved from os.environ['live_client_id'])
+            :param client_secret: client secret for API (default: retrieved from os.environ['live_client_secret'])
+            :param scope: scope parameter to be sent with request (default: self.scope/'HOFER_pleitner')
+            :param url: request url (default: 'https://www.connectedcooking.com/oauth/token')
+        :returns: True/False
+        """
+
         payload = {'jwe': jwe,
                    'grant_type': 'jwe_token'}
         with requests.Session() as sess:
@@ -165,15 +216,22 @@ class BearerToken(Token):
         return True if self.details['response'] == 200 else False
 
     def check(self):
-        return True if self.valid_to > datetime.now() else False
+        """checks if valid_to date is in the past, sets self.valid True/False
+        :returns: bool
+        """
+
+        if self.valid_to > datetime.now():
+            self.valid = True
+            return True
+
+        else:
+            self.valid = False
+            return False
 
 
 if __name__ == '__main__':
     jwe_test = JWEToken()
     print(jwe_test.valid)
-    print(jwe_test.expires_in)
     print(jwe_test.scope)
     print(jwe_test.site)
-    print(jwe_test.check())
-#    print(jwe_test.import_local())
     pprint(jwe_test.import_local())

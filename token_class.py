@@ -27,17 +27,22 @@ class Token:
         self.site = site
         self.token = token
 
+    def export_local(self, path=None):
+        if path is None:
+            path = 'token.json'
+        data = {'token': self.token,
+                'created': str(self.created),
+                'details': self.details}
+        with open(path, mode='w') as fh:
+            json.dump(data, fh)
+        return True
+
     def check(self):
         if self.created + timedelta(seconds=self.expires_in) > datetime.now():
             self.valid = True
         else:
             self.valid = False
         return self.valid
-
-    @classmethod
-    def jwe(cls):
-        return cls(expires_in=999999,
-                   valid=True)
 
 
 class JWEToken(Token):
@@ -48,7 +53,7 @@ class JWEToken(Token):
         try:
             with open(path) as fh:
                 local = json.load(fh)
-            self.token = local['jwe']
+            self.token = local['token']
             self.details = local['details']
             self.created = datetime.strptime(local['created'], time_format)
             self.valid = True
@@ -82,18 +87,18 @@ class JWEToken(Token):
         result = True if self.details['response'] == 200 else False
         return result
 
-    def export_local(self, path=None):
-        if path is None:
-            path = self.scope + '_jwe_token.json'
-        data = {'jwe': self.token,
-                'created': str(self.created),
-                'details': self.details}
-        try:
-            with open(path, mode='w') as fh:
-                json.dump(data, fh)
-            return True
-        except FileExistsError:
-            return False
+#    def export_local(self, path=None):
+#        if path is None:
+#            path = self.scope + '_jwe_token.json'
+#        data = {'jwe': self.token,
+#                'created': str(self.created),
+#                'details': self.details}
+#        try:
+#            with open(path, mode='w') as fh:
+#                json.dump(data, fh)
+#            return True
+#        except FileExistsError:
+#            return False
 
 
 class BearerToken(Token):

@@ -6,6 +6,7 @@ from datetime import datetime, timedelta
 from pprint import pprint
 
 
+# export_local will be shifted to parent class + modified with inheritance
 time_format = '%Y-%m-%d %H:%M:%S.%f'
 
 

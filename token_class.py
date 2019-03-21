@@ -37,19 +37,9 @@ class Token:
             json.dump(data, fh)
         return True
 
-    def check(self):
-        if self.created + timedelta(seconds=self.expires_in) > datetime.now():
-            self.valid = True
-        else:
-            self.valid = False
-        return self.valid
-
-
-class JWEToken(Token):
-    def import_local(self,
-                     path=None):
+    def import_local(self, path=None):
         if path is None:
-            path = self.site + '_jwe_token.json'
+            path = 'token.json'
         try:
             with open(path) as fh:
                 local = json.load(fh)
@@ -62,6 +52,15 @@ class JWEToken(Token):
             self.valid = False
             return False
 
+    def check(self):
+        if self.created + timedelta(seconds=self.expires_in) > datetime.now():
+            self.valid = True
+        else:
+            self.valid = False
+        return self.valid
+
+
+class JWEToken(Token):
     def request(self, *,
                 username: str = os.environ.get('live_user'),
                 password: str = os.environ.get('live_password'),
@@ -86,19 +85,6 @@ class JWEToken(Token):
                         'response': response.status_code}
         result = True if self.details['response'] == 200 else False
         return result
-
-#    def export_local(self, path=None):
-#        if path is None:
-#            path = self.scope + '_jwe_token.json'
-#        data = {'jwe': self.token,
-#                'created': str(self.created),
-#                'details': self.details}
-#        try:
-#            with open(path, mode='w') as fh:
-#                json.dump(data, fh)
-#            return True
-#        except FileExistsError:
-#            return False
 
 
 class BearerToken(Token):

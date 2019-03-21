@@ -1,35 +1,19 @@
 import requests
-import json
-import datetime as dt
 import pandas as pd
 from pprint import pprint
-from authentication import get_bearer, token_url_live, token_url_stage
+from token_class import JWEToken, BearerToken
 
 
-def get_batches(*,
-                token_file: str = 'live_bearer_token.json',
-                stage: bool = True) -> dict:
-    url = 'https://stage.connectedcooking.com/api/haccps' if stage else 'https://www.connectedcooking.com/api/haccps'
-    with open(token_file) as fh:
-        auth_file = json.load(fh)
-    expiration = dt.datetime.strptime(auth_file.get('valid_to'), '%Y-%m-%d %H:%M:%S.%f')
-    if expiration < dt.datetime.now():
-        choice = input('Bearer token has expired {} - refresh? Y/N: '.format(expiration))
-        if choice == 'N':
-            quit()
-        else:
-            if not stage:
-                kwargs = {'url': token_url_live,
-                          'jwe': auth_file['token']}
-            else:
-                kwargs = {'url': token_url_stage,
-                          'jwe': auth_file['token']}
-            auth_file = get_bearer(**kwargs)
-    # needs elif --> token for correct env?
-    else:
-        pass
-    token = auth_file['token']
-    scope = auth_file['details']['request_headers']['scope']
+jwe = JWEToken()
+jwe.import_local('jwe_test.json')
+bearer = BearerToken()
+bearer.import_local('bearer_test.json')
+
+
+def get_batches():
+    url = 'https://www.connectedcooking.com/api/haccps'
+    token = bearer.token
+    scope = bearer.scope
     headers = {'Authorization': 'Bearer ' + token,
                'scope': scope}
     parameters = {'finished': 'true',
@@ -49,7 +33,7 @@ def get_batches(*,
 
 
 if __name__ == '__main__':
-    batches = get_batches(stage=False)
+    batches = get_batches()
     pprint(batches.get('request_headers'))
     pprint(batches.get('request_body'))
     print(batches.get('response'))

@@ -1,7 +1,10 @@
+import requests
+import os
 from datetime import datetime, timedelta
+from class_token import BearerToken, JWEToken
 
 
-class Batch:
+class Process:
     """parent class for batch aggregation pulled from rational /CC API
 
     Attributes:
@@ -55,25 +58,32 @@ class Batch:
         self.recipe_name = recipe_name
         self.start = start
         self.temp_unit = temp_unit
+        # :todo class method request
+        # :todo class method send
+        # :todo ORM
 
 
 if __name__ == '__main__':
-    test = Batch(created=datetime.now(),
-                 app_version='rand',
-                 care_recipe=False,
-                 category='blank',
-                 chamber_id=1000,
-                 device_family='blank',
-                 device_name='699-124_SAT',
-                 device_serialnumber='E11SH13022340226',
-                 finished=False,
-                 group_id=1,
-                 group_name='03-Sattledt',
-                 process_id=1,
-                 recipe_id=195,
-                 recipe_name='schnell',
-                 start=datetime.now()-timedelta(hours=1, minutes=15))
+    test = Process(created=datetime.now(),
+                   app_version='rand',
+                   care_recipe=False,
+                   category='blank',
+                   chamber_id=1000,
+                   device_family='blank',
+                   device_name='699-124_SAT',
+                   device_serialnumber='E11SH13022340226',
+                   finished=False,
+                   group_id=1,
+                   group_name='03-Sattledt',
+                   process_id=1,
+                   recipe_id=195,
+                   recipe_name='schnell',
+                   start=datetime.now()-timedelta(hours=1, minutes=15))
 
     print(test)
     print(test.temp_unit)
-    print(isinstance(test, Batch))
+    print(isinstance(test, Process))
+    jwe = JWEToken()
+    print(jwe.request())
+    bearer = BearerToken()
+    print(bearer.request(jwe=jwe.token))

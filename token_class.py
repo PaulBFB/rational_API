@@ -9,6 +9,9 @@ from pprint import pprint
 time_format = '%Y-%m-%d %H:%M:%S.%f'            # used for json Imports
 
 
+# :todo :branch add .request() method to parent class
+#  --> pass in with **kwargs
+#  --> decorate **kwargs in child classes with additional arguments
 class Token:
     """Parent class of all token Types used in the rational ConnectedCooking API
 

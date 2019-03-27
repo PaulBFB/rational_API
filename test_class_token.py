@@ -1,4 +1,4 @@
-from token_class import JWEToken, BearerToken
+from class_token import JWEToken, BearerToken
 from pprint import pprint
 
 

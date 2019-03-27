@@ -1,7 +1,7 @@
 import requests
 import pandas as pd
 from pprint import pprint
-from token_class import JWEToken, BearerToken
+from class_token import JWEToken, BearerToken
 
 
 jwe = JWEToken()

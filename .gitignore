@@ -119,3 +119,4 @@ dmypy.json
 *.txt
 *.json
 *.csv
+*.sqlite

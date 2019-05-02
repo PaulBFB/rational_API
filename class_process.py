@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 from class_token import BearerToken, JWEToken
 
 
-class Process:
+class Process(Base):
     """parent class for batch aggregation pulled from rational /CC API
 
     Attributes:
@@ -16,16 +16,17 @@ class Process:
         :param device_family (str): families unknown
         :param device_name (str): SCC
         :param device_serialnumber (str): serial, consisting of country, store, branch. ex.: '699-124_SAT'
-        :param finished (bool):
-        :param group_id (int)
-        :param group_name (str)
-        :param process_id (int)
-        :param recipe_id (int)
-        :param recipe_name(str)
-        :param start (datetime)
+        :param finished (bool): completed process
+        :param group_id (int): ZNL identifier
+        :param group_name (str): ZNL name
+        :param process_id (int): process identifier (needs clarifying)
+        :param recipe_id (int): recipe identifier (possible FK)
+        :param recipe_name(str): recipe name
+        :param start (datetime): baking start
         :param temp_unit (str): C/F- default 'C'
     """
     def __init__(self,
+                 batch_id: int,
                  created: datetime,
                  app_version: str,
                  care_recipe: bool,
@@ -42,6 +43,7 @@ class Process:
                  recipe_name: str,
                  start: datetime,
                  temp_unit: str = 'C'):
+        self.batch_id = batch_id
         self.created = created
         self.app_version = app_version
         self.care_recipe = care_recipe
@@ -64,10 +66,11 @@ class Process:
 
 
 if __name__ == '__main__':
-    test = Process(created=datetime.now(),
+    test = Process(batch_id=1,
+                   created=datetime.now(),
                    app_version='rand',
                    care_recipe=False,
-                   category='blank',
+                   category=12,
                    chamber_id=1000,
                    device_family='blank',
                    device_name='699-124_SAT',

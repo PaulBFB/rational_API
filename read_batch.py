@@ -5,9 +5,9 @@ from class_token import JWEToken, BearerToken
 
 
 jwe = JWEToken()
-jwe.import_local('jwe_test.json')
+jwe.import_local('jwe.json')
 bearer = BearerToken()
-bearer.import_local('bearer_test.json')
+bearer.import_local('bearer.json')
 
 
 def get_batches():
@@ -17,6 +17,7 @@ def get_batches():
     headers = {'Authorization': 'Bearer ' + token,
                'scope': scope}
     parameters = {'finished': 'true',
+                  'sort': 'startDate,desc',
                   'page': 0}
     with requests.Session() as sess:
         sess.headers.update(headers)
@@ -40,4 +41,4 @@ if __name__ == '__main__':
     test = pd.DataFrame(batches.get('batches'))
     print(test.shape)
     print(test.head())
-    test.to_csv('test_csv.csv')
+    test.to_csv('test_csv.csv', index=False)

@@ -1,0 +1,1127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="11f6a424-0125-4cf2-883a-285042bef857" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/class_process.py" beforeDir="false" afterPath="$PROJECT_DIR$/class_process.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/read_batch.py" beforeDir="false" afterPath="$PROJECT_DIR$/read_batch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_class_token.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_class_token.py" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/rational_API$test_env.coverage" NAME="test_env Coverage Results" MODIFIED="1551085067731" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/rational_API$class_batch.coverage" NAME="class_batch Coverage Results" MODIFIED="1553684434086" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/rational_API$import.coverage" NAME="import Coverage Results" MODIFIED="1552642494044" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/rational_API$bearer_read.coverage" NAME="bearer read Coverage Results" MODIFIED="1552472441270" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/rational_API$authentication.coverage" NAME="authentication Coverage Results" MODIFIED="1551947939900" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/rational_API$class_v2_test.coverage" NAME="class_v2_test Coverage Results" MODIFIED="1553180989063" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/rational_API$read_batch.coverage" NAME="read_batch Coverage Results" MODIFIED="1553181491958" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/rational_API$auth_live.coverage" NAME="auth_live Coverage Results" MODIFIED="1551944328074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/rational_API$logon_test.coverage" NAME="logon_test Coverage Results" MODIFIED="1551944606393" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/rational_API$json_file_test.coverage" NAME="json-file-test Coverage Results" MODIFIED="1551445837891" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/rational_API$documentation_output.coverage" NAME="documentation_output Coverage Results" MODIFIED="1551948057737" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/rational_API$test_decorator.coverage" NAME="test-decorator Coverage Results" MODIFIED="1551348895723" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/rational_API$env_test.coverage" NAME="env_test Coverage Results" MODIFIED="1552548059651" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/rational_API$documentation_batches.coverage" NAME="documentation_batches Coverage Results" MODIFIED="1551949674980" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/rational_API$token_class.coverage" NAME="token_class Coverage Results" MODIFIED="1552477887364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/rational_API$read_date_test.coverage" NAME="read_date_test Coverage Results" MODIFIED="1551275441970" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/rational_API$class_test.coverage" NAME="class_test Coverage Results" MODIFIED="1553171407341" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/rational_API$read_file.coverage" NAME="read file Coverage Results" MODIFIED="1552478396460" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/rational_API$error_open.coverage" NAME="error open Coverage Results" MODIFIED="1552466589332" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/rational_API$session_test.coverage" NAME="session_test Coverage Results" MODIFIED="1551084470255" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="SQLite - database.sqlite" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="SQLite - database.sqlite" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="SQLite - database.sqlite" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="SQLite - database.sqlite" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+        <item name="process: table" type="3d80ac25:SqliteImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="SQLite - database.sqlite" type="feb32156:DbDataSourceImpl" />
+        <item name="collations" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ExecutionTargetDialog">
+    <checked>
+      <node key="dcb969f8-1bc0-47ea-85dc-8652097db965" />
+    </checked>
+    <expanded>
+      <node key="dcb969f8-1bc0-47ea-85dc-8652097db965" />
+    </expanded>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="rational_API" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test_class_token.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
+              <folding>
+                <element signature="e#0#45#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/read_batch.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="523">
+              <caret line="44" selection-start-line="44" selection-end-line="44" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/class_process.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="388">
+              <caret line="83" column="70" lean-forward="true" selection-start-line="68" selection-start-column="19" selection-end-line="83" selection-end-column="70" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/orm_test_process.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="600">
+              <caret line="52" column="16" selection-start-line="52" selection-start-column="16" selection-end-line="52" selection-end-column="16" />
+              <folding>
+                <element signature="e#0#4#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="das://dcb969f8-1bc0-47ea-85dc-8652097db965/schema/main/table/process">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state isTransposed="true">
+              <filtering enabled="true">
+                <filter text="" />
+              </filtering>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/dcb969f8-1bc0-47ea-85dc-8652097db965/console_1.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" selection-end-line="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/create_process_table.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="19" column="24" lean-forward="true" selection-start-line="3" selection-end-line="19" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>datetime</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="class_inheritance_v2" />
+      </map>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/test_env.py" />
+        <option value="$PROJECT_DIR$/session_test.py" />
+        <option value="$PROJECT_DIR$/file_test.py" />
+        <option value="$PROJECT_DIR$/read_date_test.py" />
+        <option value="$PROJECT_DIR$/test-decorator.py" />
+        <option value="$PROJECT_DIR$/json-file-test.py" />
+        <option value="$PROJECT_DIR$/test_tick.py" />
+        <option value="$PROJECT_DIR$/logon_test.py" />
+        <option value="$PROJECT_DIR$/auth_live.py" />
+        <option value="$PROJECT_DIR$/documentation_output.py" />
+        <option value="$PROJECT_DIR$/documentation_batches.py" />
+        <option value="$PROJECT_DIR$/authentication.py" />
+        <option value="$PROJECT_DIR$/error open.py" />
+        <option value="$PROJECT_DIR$/bearer read.py" />
+        <option value="$PROJECT_DIR$/read file.py" />
+        <option value="$PROJECT_DIR$/env_test.py" />
+        <option value="$PROJECT_DIR$/import.py" />
+        <option value="$PROJECT_DIR$/class_test.py" />
+        <option value="$PROJECT_DIR$/dec_prac.py" />
+        <option value="$PROJECT_DIR$/class_v2_test.py" />
+        <option value="$PROJECT_DIR$/class_batch.py" />
+        <option value="$PROJECT_DIR$/token_class.py" />
+        <option value="$PROJECT_DIR$/uuid.py" />
+        <option value="$PROJECT_DIR$/uuid_test.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/test_class_token.py" />
+        <option value="$PROJECT_DIR$/read_batch.py" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/dcb969f8-1bc0-47ea-85dc-8652097db965/console_2.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/dcb969f8-1bc0-47ea-85dc-8652097db965/console_1.sql" />
+        <option value="$PROJECT_DIR$/create_process_table.sql" />
+        <option value="$PROJECT_DIR$/class_process.py" />
+        <option value="$PROJECT_DIR$/orm_test_process.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+    <option name="x" value="260" />
+    <option name="y" value="53" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="rational_API" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rational_API" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rational_API" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+            </path>
+            <path>
+              <item name="rational_API" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+              <item name="Database Consoles" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
+            </path>
+            <path>
+              <item name="rational_API" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+              <item name="Database Consoles" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
+              <item name="dcb969f8-1bc0-47ea-85dc-8652097db965" type="1e004dc1:ScratchProjectViewPane$MyRootNode$1$1" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="sqlite" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="database.console.LAST_STATE" value="false" />
+    <property name="last_opened_file_path" value="/usr/bin/R" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.orm_test_process">
+    <configuration name="class_batch" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="rational_API" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/class_process.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="orm_test_process" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="rational_API" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/orm_test_process.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="read_batch" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="rational_API" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/read_batch.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_class_token" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="rational_API" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_class_token.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="uuid" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="rational_API" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/uuid_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.orm_test_process" />
+        <item itemvalue="Python.class_batch" />
+        <item itemvalue="Python.read_batch" />
+        <item itemvalue="Python.test_class_token" />
+        <item itemvalue="Python.uuid" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="11f6a424-0125-4cf2-883a-285042bef857" name="Default Changelist" comment="" />
+      <created>1550784325067</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1550784325067</updated>
+      <workItem from="1550784328986" duration="173000" />
+      <workItem from="1550819234662" duration="4322000" />
+      <workItem from="1550833885895" duration="3683000" />
+      <workItem from="1551082176792" duration="3646000" />
+      <workItem from="1551093176015" duration="1463000" />
+      <workItem from="1551185521862" duration="533000" />
+      <workItem from="1551262645568" duration="12000" />
+      <workItem from="1551262801080" duration="3134000" />
+      <workItem from="1551266406934" duration="5427000" />
+      <workItem from="1551277220646" duration="6545000" />
+      <workItem from="1551285067429" duration="245000" />
+      <workItem from="1551341100921" duration="10735000" />
+      <workItem from="1551369778207" duration="275000" />
+      <workItem from="1551426461539" duration="766000" />
+      <workItem from="1551430920528" duration="1276000" />
+      <workItem from="1551434768987" duration="4296000" />
+      <workItem from="1551680852418" duration="842000" />
+      <workItem from="1551683082045" duration="963000" />
+      <workItem from="1551688198224" duration="6391000" />
+      <workItem from="1551768726958" duration="96000" />
+      <workItem from="1551787533164" duration="11000" />
+      <workItem from="1551787563642" duration="2218000" />
+      <workItem from="1551789920958" duration="4115000" />
+      <workItem from="1551794380015" duration="246000" />
+      <workItem from="1551794701896" duration="1856000" />
+      <workItem from="1551796891675" duration="4376000" />
+      <workItem from="1551803269599" duration="12000" />
+      <workItem from="1551803309837" duration="5844000" />
+      <workItem from="1551888622854" duration="598000" />
+      <workItem from="1551889563494" duration="11000" />
+      <workItem from="1551889840701" duration="1740000" />
+      <workItem from="1551942909256" duration="242000" />
+      <workItem from="1551943175621" duration="1449000" />
+      <workItem from="1551944689636" duration="2217000" />
+      <workItem from="1551947594166" duration="11121000" />
+      <workItem from="1552031468756" duration="2952000" />
+      <workItem from="1552037233279" duration="1241000" />
+      <workItem from="1552401097088" duration="3481000" />
+      <workItem from="1552405342662" duration="84000" />
+      <workItem from="1552461972101" duration="11925000" />
+      <workItem from="1552479126262" duration="4704000" />
+      <workItem from="1552546780065" duration="312000" />
+      <workItem from="1552547182756" duration="520000" />
+      <workItem from="1552547749840" duration="87000" />
+      <workItem from="1552548019310" duration="5297000" />
+      <workItem from="1552565686442" duration="1841000" />
+      <workItem from="1552641608491" duration="1168000" />
+      <workItem from="1552642829411" duration="2000000" />
+      <workItem from="1552645891291" duration="273000" />
+      <workItem from="1552646188797" duration="11000" />
+      <workItem from="1552899141426" duration="945000" />
+      <workItem from="1552903230764" duration="959000" />
+      <workItem from="1553167929100" duration="4365000" />
+      <workItem from="1553176543294" duration="4905000" />
+      <workItem from="1553186515580" duration="126000" />
+      <workItem from="1553680384300" duration="361000" />
+      <workItem from="1553680840960" duration="45000" />
+      <workItem from="1553680905056" duration="34000" />
+      <workItem from="1553680960668" duration="1212000" />
+      <workItem from="1553682211041" duration="2524000" />
+      <workItem from="1553695184966" duration="622000" />
+      <workItem from="1553695830908" duration="2007000" />
+      <workItem from="1553760375098" duration="7275000" />
+      <workItem from="1553782306918" duration="1830000" />
+      <workItem from="1553850115461" duration="629000" />
+      <workItem from="1554112223774" duration="770000" />
+      <workItem from="1554884887299" duration="699000" />
+      <workItem from="1554896484741" duration="127000" />
+      <workItem from="1554896643276" duration="5208000" />
+      <workItem from="1554968935023" duration="1323000" />
+      <workItem from="1555332647978" duration="622000" />
+      <workItem from="1555334551505" duration="1819000" />
+      <workItem from="1555406273384" duration="4353000" />
+      <workItem from="1555422748628" duration="1200000" />
+      <workItem from="1555506736121" duration="1618000" />
+      <workItem from="1555570328214" duration="5699000" />
+      <workItem from="1555656876783" duration="1212000" />
+      <workItem from="1556012784025" duration="9225000" />
+      <workItem from="1556087396777" duration="7077000" />
+      <workItem from="1556526933291" duration="8364000" />
+      <workItem from="1556609924458" duration="1860000" />
+      <workItem from="1556794395607" duration="7387000" />
+    </task>
+    <task id="LOCAL-00003" summary="added gitignore description&#10;added batach /hccps access">
+      <created>1551284733722</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1551284733722</updated>
+    </task>
+    <task id="LOCAL-00004" summary="streamlined auth - writing bearer, refresh and expiration to current dir">
+      <created>1551285230930</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1551285230930</updated>
+    </task>
+    <task id="LOCAL-00005" summary="adding context management (for files and sessions)&#10;added type and output hints (all functions)">
+      <created>1551349347374</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1551349347374</updated>
+    </task>
+    <task id="LOCAL-00006" summary="changed output to json">
+      <created>1551356953118</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1551356953118</updated>
+    </task>
+    <task id="LOCAL-00007" summary="updated .gitignore to include *.json">
+      <created>1551357034008</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1551357034008</updated>
+    </task>
+    <task id="LOCAL-00008" summary="added missing scope to request for bearer token">
+      <created>1551360473128</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1551360473128</updated>
+    </task>
+    <task id="LOCAL-00009" summary="error corr.">
+      <created>1551360505042</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1551360505042</updated>
+    </task>
+    <task id="LOCAL-00010" summary="added json template - read from disk, format datetime from string">
+      <created>1551369870551</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1551369870551</updated>
+    </task>
+    <task id="LOCAL-00011" summary="adding test to pull first 10 haccps sets from rational/staging">
+      <created>1551369906312</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1551369906312</updated>
+    </task>
+    <task id="LOCAL-00012" summary="code cleanup, annotations for future changes">
+      <created>1551446072806</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1551446072806</updated>
+    </task>
+    <task id="LOCAL-00013" summary="initial batch function - pull batches, dump to pd.DataFrame &amp; CSV">
+      <created>1551446114965</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1551446114965</updated>
+    </task>
+    <task id="LOCAL-00014" summary="ignore csv">
+      <created>1551705263598</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1551705263598</updated>
+    </task>
+    <task id="LOCAL-00015" summary="untested - adding switch live/stage to get_bearer &amp; authenticate function">
+      <created>1551705332940</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1551705332940</updated>
+    </task>
+    <task id="LOCAL-00016" summary="added switch for live/test&#10;refactored login function&#10;added URL parameter to login function">
+      <created>1551792409326</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1551792409326</updated>
+    </task>
+    <task id="LOCAL-00017" summary="fixed error in URL">
+      <created>1551802700337</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1551802700338</updated>
+    </task>
+    <task id="LOCAL-00018" summary="adding test module to log in to live and get bearer token">
+      <created>1551802723825</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1551802723825</updated>
+    </task>
+    <task id="LOCAL-00019" summary="final ver&#10;can be bound to shortcut">
+      <created>1551946652221</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1551946652221</updated>
+    </task>
+    <task id="LOCAL-00020" summary="changed comments">
+      <created>1551967901544</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1551967901544</updated>
+    </task>
+    <task id="LOCAL-00021" summary="added switch for live/stage (untested)">
+      <created>1551967927667</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1551967927667</updated>
+    </task>
+    <task id="LOCAL-00022" summary="functional version - test batch read from live syste">
+      <created>1552033237807</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1552033237808</updated>
+    </task>
+    <task id="LOCAL-00023" summary="OO version of token (parent class) with first test">
+      <created>1552404583980</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1552404583980</updated>
+    </task>
+    <task id="LOCAL-00024" summary="first draft of sub-class JWE token">
+      <created>1552464441222</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1552464441222</updated>
+    </task>
+    <task id="LOCAL-00025" summary="error correct">
+      <created>1552464539443</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1552464539443</updated>
+    </task>
+    <task id="LOCAL-00026" summary="altered return dict{} - moved response to details">
+      <created>1552465938462</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1552465938462</updated>
+    </task>
+    <task id="LOCAL-00027" summary="finished draft - JWEToken class">
+      <created>1552466888772</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1552466888775</updated>
+    </task>
+    <task id="LOCAL-00028" summary="finished draft - JWEToken class&#10;added request">
+      <created>1552467783677</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1552467783679</updated>
+    </task>
+    <task id="LOCAL-00029" summary="draft - BearerToken - added to-dos">
+      <created>1552473073173</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1552473073173</updated>
+    </task>
+    <task id="LOCAL-00030" summary="inheritance changed">
+      <created>1552479069471</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1552479069471</updated>
+    </task>
+    <task id="LOCAL-00031" summary="correction to header dict&#10;all methods tested &amp; functional">
+      <created>1552480280753</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1552480280754</updated>
+    </task>
+    <task id="LOCAL-00032" summary="classmethod test">
+      <created>1552488753699</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1552488753699</updated>
+    </task>
+    <task id="LOCAL-00033" summary="draft request method for bearer class">
+      <created>1552561020201</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1552561020201</updated>
+    </task>
+    <task id="LOCAL-00034" summary="token class v1.0 - tested &amp; working">
+      <created>1552565918683</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1552565918683</updated>
+    </task>
+    <task id="LOCAL-00035" summary="corrections: check() method error&#10;BearerToken.check() method override - now uses valid_to parameter">
+      <created>1552642458509</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1552642458509</updated>
+    </task>
+    <task id="LOCAL-00036" summary="basic testing of class">
+      <created>1552642522167</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1552642522167</updated>
+    </task>
+    <task id="LOCAL-00037" summary="corr.">
+      <created>1552642769042</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1552642769042</updated>
+    </task>
+    <task id="LOCAL-00038" summary="changed export - handling for FileNotFound error">
+      <created>1552643822488</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1552643822488</updated>
+    </task>
+    <task id="LOCAL-00039" summary="fin">
+      <created>1552644993210</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1552644993210</updated>
+    </task>
+    <task id="LOCAL-00040" summary="initial commit - to-dos">
+      <created>1553171578813</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1553171578813</updated>
+    </task>
+    <task id="LOCAL-00041" summary="moved export local to parent class&#10;inheritance in JWEToken tested &amp; working">
+      <created>1553176604204</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1553176604205</updated>
+    </task>
+    <task id="LOCAL-00042" summary="moved import local to parent class&#10;inheritance in JWEToken tested &amp; working">
+      <created>1553178281553</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1553178281553</updated>
+    </task>
+    <task id="LOCAL-00043" summary="moved import to parent class&#10;extended import with super().import_local in BearerToken&#10;added docstrings/comments">
+      <created>1553180974407</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1553180974407</updated>
+    </task>
+    <task id="LOCAL-00044" summary="removed authentication function (replaced with Token class)&#10;changed read_batch to remove dependencies on auth function">
+      <created>1553181577007</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1553181577007</updated>
+    </task>
+    <task id="LOCAL-00045" summary="rm old files">
+      <created>1553181791238</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1553181791238</updated>
+    </task>
+    <task id="LOCAL-00046" summary="class for process from API">
+      <created>1553683150752</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1553683150752</updated>
+    </task>
+    <task id="LOCAL-00047" summary="improvement :todo for inheritance/decoration">
+      <created>1553684216526</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1553684216526</updated>
+    </task>
+    <task id="LOCAL-00048" summary="nomenclature - class_/test_">
+      <created>1553684328145</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1553684328145</updated>
+    </task>
+    <task id="LOCAL-00049" summary="nomenclature (squash)">
+      <created>1553684369950</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1553684369950</updated>
+    </task>
+    <task id="LOCAL-00050" summary="testing &amp; notes">
+      <created>1553684506928</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1553684506929</updated>
+    </task>
+    <task id="LOCAL-00051" summary="added sqlite DB test and UUID&#10;adding sqlite to gitignore">
+      <created>1553771412360</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1553771412360</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="213177000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="-36" width="1920" height="1116" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4974359" weight="0.1474359" />
+      <window_info id="Structure" order="1" sideWeight="0.50256413" side_tool="true" weight="0.11953042" />
+      <window_info id="Favorites" order="2" sideWeight="0.50296736" side_tool="true" weight="0.14354323" />
+      <window_info active="true" id="Database" order="3" sideWeight="0.49703264" visible="true" weight="0.1431624" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32801595" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49786553" weight="0.3376494" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4994664" weight="0.39956093" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32901296" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.050847456" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50213444" side_tool="true" weight="0.222333" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32868525" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32930845" />
+      <window_info anchor="bottom" id="Database Console" order="13" weight="0.32868525" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" weight="0.32959402" />
+      <window_info anchor="right" id="R Graphics" order="4" />
+      <window_info anchor="right" id="R Packages" order="5" weight="0.32977587" />
+      <window_info anchor="right" id="Key Promoter X" order="6" />
+      <window_info anchor="right" id="Coverage" order="7" side_tool="true" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4974359" weight="0.14262821" />
+      <window_info id="Structure" order="1" sideWeight="0.50256413" side_tool="true" weight="0.11953042" />
+      <window_info id="Favorites" order="2" sideWeight="0.50296736" side_tool="true" weight="0.14354323" />
+      <window_info active="true" id="Database" order="3" sideWeight="0.49703264" visible="true" weight="0.1431624" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32801595" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49786553" weight="0.22686568" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4994664" weight="0.39956093" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32901296" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.050847456" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50213444" side_tool="true" weight="0.222333" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32935324" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32930845" />
+      <window_info anchor="bottom" id="Database Console" order="13" visible="true" weight="0.32868525" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="R Graphics" order="4" />
+      <window_info anchor="right" id="R Packages" order="5" weight="0.32977587" />
+      <window_info anchor="right" id="Key Promoter X" order="6" />
+      <window_info anchor="right" id="Coverage" order="7" side_tool="true" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="finished draft - JWEToken class" />
+    <MESSAGE value="finished draft - JWEToken class&#10;added request" />
+    <MESSAGE value="draft - BearerToken - added to-dos" />
+    <MESSAGE value="inheritance changed" />
+    <MESSAGE value="correction to header dict&#10;all methods tested &amp; functional" />
+    <MESSAGE value="classmethod test" />
+    <MESSAGE value="draft request method for bearer class" />
+    <MESSAGE value="token class v1.0 - tested &amp; working" />
+    <MESSAGE value="corrections: check() method error&#10;BearerToken.check() method override - now uses valid_to parameter" />
+    <MESSAGE value="basic testing of class" />
+    <MESSAGE value="corr." />
+    <MESSAGE value="changed export - handling for FileNotFound error" />
+    <MESSAGE value="fin" />
+    <MESSAGE value="initial commit - to-dos" />
+    <MESSAGE value="moved export local to parent class&#10;inheritance in JWEToken tested &amp; working" />
+    <MESSAGE value="moved import local to parent class&#10;inheritance in JWEToken tested &amp; working" />
+    <MESSAGE value="moved import to parent class&#10;extended import with super().import_local in BearerToken&#10;added docstrings/comments" />
+    <MESSAGE value="removed authentication function (replaced with Token class)&#10;changed read_batch to remove dependencies on auth function" />
+    <MESSAGE value="rm old files" />
+    <MESSAGE value="class for process from API" />
+    <MESSAGE value="improvement :todo for inheritance/decoration" />
+    <MESSAGE value="nomenclature - class_/test_" />
+    <MESSAGE value="nomenclature (squash)" />
+    <MESSAGE value="testing &amp; notes" />
+    <MESSAGE value="added sqlite DB test and UUID&#10;adding sqlite to gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="added sqlite DB test and UUID&#10;adding sqlite to gitignore" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/rational_API$uuid.coverage" NAME="uuid Coverage Results" MODIFIED="1553771285054" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/rational_API$test_class_token.coverage" NAME="test_class_token Coverage Results" MODIFIED="1556796553445" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/rational_API$class_batch.coverage" NAME="class_batch Coverage Results" MODIFIED="1556800209039" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/rational_API$orm_test_process.coverage" NAME="orm_test_process Coverage Results" MODIFIED="1556801988055" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/rational_API$read_batch.coverage" NAME="read_batch Coverage Results" MODIFIED="1556796649206" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/test_env.py" />
+    <entry file="file://$PROJECT_DIR$/file_test.py" />
+    <entry file="file://$PROJECT_DIR$/test-decorator.py" />
+    <entry file="file://$PROJECT_DIR$/token_storage.txt" />
+    <entry file="file://$PROJECT_DIR$/token.txt" />
+    <entry file="file://$PROJECT_DIR$/token.json" />
+    <entry file="file://$PROJECT_DIR$/read_date_test.py" />
+    <entry file="file://$PROJECT_DIR$/output_test.txt" />
+    <entry file="file://$PROJECT_DIR$/test_tick.py" />
+    <entry file="file://$PROJECT_DIR$/token_test.json" />
+    <entry file="file://$PROJECT_DIR$/auth_live.py" />
+    <entry file="file://$PROJECT_DIR$/logon_test.py" />
+    <entry file="file://$PROJECT_DIR$/session_test.py" />
+    <entry file="file://$PROJECT_DIR$/documentation_output.py" />
+    <entry file="file://$PROJECT_DIR$/documentation_batches.py" />
+    <entry file="file://$PROJECT_DIR$/output.txt" />
+    <entry file="file://$PROJECT_DIR$/error open.py" />
+    <entry file="file://$PROJECT_DIR$/bearer read.py" />
+    <entry file="file://$PROJECT_DIR$/test.json" />
+    <entry file="file://$PROJECT_DIR$/live_jwe_token.json" />
+    <entry file="file://$PROJECT_DIR$/env_test.py" />
+    <entry file="file://$PROJECT_DIR$/read file.py" />
+    <entry file="file://$PROJECT_DIR$/import.py" />
+    <entry file="file://$PROJECT_DIR$/test_token.json" />
+    <entry file="file://$PROJECT_DIR$/bearer_test.json" />
+    <entry file="file://$PROJECT_DIR$/live_bearer_token.json" />
+    <entry file="file://$PROJECT_DIR$/dec_prac.py" />
+    <entry file="file://$PROJECT_DIR$/authentication.py" />
+    <entry file="file://$PROJECT_DIR$/json-file-test.py" />
+    <entry file="file://$PROJECT_DIR$/class_v2_test.py" />
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="617">
+          <caret line="121" column="8" selection-start-line="121" selection-start-column="8" selection-end-line="121" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uuid_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/class_token.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="975">
+          <caret line="70" column="19" selection-start-line="70" selection-start-column="19" selection-end-line="70" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_class_token.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_csv.csv">
+      <provider selected="true" editor-type-id="csv-text-editor" />
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/dcb969f8-1bc0-47ea-85dc-8652097db965/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/read_batch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="523">
+          <caret line="44" selection-start-line="44" selection-end-line="44" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://dcb969f8-1bc0-47ea-85dc-8652097db965/schema/main/table/TEST">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true">
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://dcb969f8-1bc0-47ea-85dc-8652097db965/schema/main/table/sqlite_master">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/dcb969f8-1bc0-47ea-85dc-8652097db965/console_2.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="21" selection-start-column="21" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://dcb969f8-1bc0-47ea-85dc-8652097db965/schema/main/table/process.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jwe.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/create_process_table.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="24" lean-forward="true" selection-start-line="3" selection-end-line="19" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/class_process.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="83" column="70" lean-forward="true" selection-start-line="68" selection-start-column="19" selection-end-line="83" selection-end-column="70" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/dcb969f8-1bc0-47ea-85dc-8652097db965/console_1.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/orm_test_process.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="52" column="16" selection-start-line="52" selection-start-column="16" selection-end-line="52" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#4#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://dcb969f8-1bc0-47ea-85dc-8652097db965/schema/main/table/process">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state isTransposed="true">
+          <filtering enabled="true">
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
